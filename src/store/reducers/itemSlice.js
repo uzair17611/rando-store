@@ -8,12 +8,15 @@ const itemSlice = createSlice({
   name: "items",
   initialState,
   reducers: {
-    setItems(state, actions) {
-      state.items = actions.payload;
+    setItems(state, action) {
+      state.items = action.payload;
+    },
+    addItemToList(state, action) {
+      state.items.push(action.payload);
     },
   },
 });
 
 export default itemSlice.reducer;
 
-export const { setItems } = itemSlice.actions;
+export const { setItems, addItemToList } = itemSlice.actions;
