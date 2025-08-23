@@ -1,12 +1,62 @@
-# React + Vite
+# 🛍️ RandoStore  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+RandoStore is a simple online store where users can:  
+- List random items for sale  
+- Add items to a cart  
+- Checkout items  
+- Add new items through a form  
 
-Currently, two official plugins are available:
+This project was built as part of the **Productbox Frontend Code Challenge**.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React 19 + Vite** – modern, fast frontend setup  
+- **Redux Toolkit** – state management  
+- **React Router v6** – client-side routing  
+- **Material UI (MUI)** – UI components  
+- **Formik + Yup** – form handling and validation  
+- **Axios** – API communication  
+- **LocalStorage** – persistent cart  
+
+---
+
+## 📂 Project Structure  
+
+
+src/
+├── api/ # API calls with axiosInstance
+├── components/ # Reusable UI components (Layout, ItemCard, CartIcon, etc.)
+├── pages/ # Pages (Home, Items, Checkout)
+├── shared/ # Shared inputs, dialogs
+├── store/ # Redux slices and store configuration
+├── utils/ # Helper functions, constants
+
+
+
+
+---
+
+## ⚡ Features  
+
+- 🏠 Homepage with navigation  
+- 📦 Items page – list of all items  
+- 🛒 Cart with persistent storage  
+- ➕ Add Item modal with validation  
+- ✅ Checkout page with total price and remove/clear functionality  
+- 🔄 Lazy loading for pages (React.lazy + Suspense)  
+- 🎨 Responsive Material UI design  
+
+---
+
+## 🛠️ Getting Started  
+
+### 1. Clone repo  
+```bash
+git clone https://github.com/uzair17611/rando-store.git
+cd rando-store
+
+
+npm install
+npm run dev
