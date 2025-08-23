@@ -1,14 +1,25 @@
-import { Grid } from "@mui/material";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { Grid, Typography } from "@mui/material";
 import ItemCard from "../components/ItemCard";
-import { dummyItems } from "../utilis/constant";
+import { fetchItems } from "../api/ItemApiCalls";
 
 const Items = () => {
+  useEffect(() => {
+    fetchItems();
+  }, []);
+
+  const items = useSelector((state) => state.Item.items);
+
   return (
     <>
-      <h2>Items Page</h2>
+      <Typography variant="h4" gutterBottom>
+        Items Page
+      </Typography>
+
       <Grid container spacing={2}>
-        {dummyItems.map((item) => (
-          <Grid item key={item.id}>
+        {items.map((item) => (
+          <Grid item key={item.id} xs={12} sm={6} md={4} lg={3}>
             <ItemCard {...item} />
           </Grid>
         ))}
