@@ -5,15 +5,27 @@ import {
   Typography,
   Button,
 } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../store/reducers/cartSlice";
 
-const ItemCard = ({ name, price, img }) => {
+const ItemCard = ({ id, name, price, img }) => {
+  const dispatch = useDispatch();
+
   return (
-    <Card sx={{ maxWidth: 250 }}>
-      <CardMedia component="img" height="140" image={img} alt={name} />
+    <Card sx={{ maxWidth: 250, borderRadius: 2, boxShadow: 3 }}>
+      <CardMedia component="img" height="160" image={img} alt={name} />
       <CardContent>
-        <Typography variant="h6">{name}</Typography>
-        <Typography color="text.secondary">${price}</Typography>
-        <Button variant="contained" sx={{ mt: 1 }}>
+        <Typography variant="h6" fontWeight="bold">
+          {name}
+        </Typography>
+        <Typography color="text.secondary" sx={{ mb: 1 }}>
+          ${price}
+        </Typography>
+        <Button
+          variant="contained"
+          fullWidth
+          onClick={() => dispatch(addToCart({ id, name, price, img }))}
+        >
           Add to Cart
         </Button>
       </CardContent>
