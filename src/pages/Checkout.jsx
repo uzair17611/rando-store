@@ -17,15 +17,11 @@ const Checkout = () => {
 
   const total = cartItems.reduce((sum, item) => sum + item.price, 0);
 
-  if (cartItems.length === 0) {
-    return (
-      <Typography variant="h5" sx={{ mt: 3, textAlign: "center" }}>
-        🛒 Your cart is empty.
-      </Typography>
-    );
-  }
-
-  return (
+  return cartItems.length === 0 ? (
+    <Typography variant="h5" sx={{ mt: 3, textAlign: "center" }}>
+      🛒 Your cart is empty.
+    </Typography>
+  ) : (
     <Box sx={{ mt: 3 }}>
       <Typography variant="h4" gutterBottom>
         Checkout
