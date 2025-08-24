@@ -25,11 +25,6 @@ const ErrorBoundaryDialog = () => {
           </Typography>
         </Box>
       </DialogContent>
-      <DialogActions>
-        <Button fullWidth variant="contained" color={"error"}>
-          Reload
-        </Button>
-      </DialogActions>
     </Dialog>
   );
 };
