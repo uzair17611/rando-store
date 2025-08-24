@@ -5,7 +5,7 @@ import {
   setShowBeatLoader,
   setHideBeatLoader,
 } from "../store/reducers/alertSlice";
-import { handleErrorMessages, handleCatchErrors } from "../Helper/helper";
+import { handleCatchErrors } from "../Helper/helper";
 
 const getFormattedItem = (data) => ({
   id: data.id,

@@ -44,20 +44,21 @@ const AddItemDialog = ({ open, onClose }) => {
           <Grid item xs={12} md={6}>
             <InputField formik={formik} name="price" label="Price" />
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} fullWidth>
             <InputField formik={formik} name="img" label="Image URL" />
           </Grid>
-          <Grid item xs={12}>
-            <Button
-              variant="contained"
-              type="submit"
-              endIcon={<Send />}
-              loading={formik.isSubmitting}
-              fullWidth
-            >
-              Add Item
-            </Button>
-          </Grid>
+        </Grid>
+        <Grid>
+          <Button
+            variant="contained"
+            type="submit"
+            endIcon={<Send />}
+            loading={formik.isSubmitting}
+            fullWidth
+            sx={{ mt: 3 }}
+          >
+            Add Item
+          </Button>
         </Grid>
       </Box>
     </AppDialog>
